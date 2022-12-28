@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/support"
+    app:startDestination="@id/showCategoryItems2">
+
+    <fragment
+        android:id="@+id/showCategoryItems2"
+        android:name="com.example.farhastore.User.view.ShowCategoryItems"
+        android:label="ShowCategoryItems" >
+        <action
+            android:id="@+id/action_showCategoryItems2_to_productPageFragment2"
+            app:destination="@id/productPageFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/productPageFragment2"
+        android:name="com.example.farhastore.User.view.ProductPageFragment"
+        android:label="ProductPageFragment" />
+</navigation>

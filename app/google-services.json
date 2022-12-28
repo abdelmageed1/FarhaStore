@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "54721493451",
+    "project_id": "farhastore-8ce13",
+    "storage_bucket": "farhastore-8ce13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54721493451:android:ba6b5d8cf30d948dfb5e4e",
+        "android_client_info": {
+          "package_name": "com.example.farhastore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54721493451-cf3lkgle08no4laqa19k3rlo7qo9gi97.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfMdH3vrggTPClYEpZT_wHsX7gTExzO4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54721493451-cf3lkgle08no4laqa19k3rlo7qo9gi97.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

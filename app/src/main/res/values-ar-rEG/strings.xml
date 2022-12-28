@@ -1,0 +1,55 @@
+
+<resources>
+    <string name="app_name">متجر فرحةةه</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="presed">اضغط مرتين للخروج</string>
+    <string name="login_hint_email">اميل</string>
+    <string name="text_login">تسجيل الدخول...</string>
+    <string name="login_hint_pass"> كلمة السر</string>
+    <string name="btn_login">تسجيل الدخول</string>
+    <string name="btn_SignUp">تسجيل </string>
+    <string name="login_hint_fname">الاسم الاول </string>
+    <string name="login_hint_lname">الاسم الثانى</string>
+    <string name="createNewAccount"> <u>انشاء حساب جديد</u></string>
+    <string name="enter_your_phone">" رقم الموبايل"</string>
+    <string name="i_have_already_account"><u>لدي حساب بالفعل</u></string>
+    <string name="gender"> النوع : </string>
+    <string name="complete_this_fields">عفوا اكمل البيانات</string>
+    <string name="male">ذكر</string>
+    <string name="female">انثى</string>
+    <string name="my_profile_in_farha">مرحبا فى عالم فرحةة</string>
+    <string name="about_us">معلومات عنا</string>
+
+    <string name="contact_us">"تواصل معنا "</string>
+    <string name="sign_out">تسجيل الخروج</string>
+    <string name="update_my_profile_info">تعديل معلوماتى الشخصية</string>
+    <string name="enter_your_address">العنوان (بلد , منطقة , شارع)</string>
+
+    <string name="Save">حفظ</string>
+    <string name="invalid_phone_number">رقم الموبايل غير صحيح</string>
+    <string name="today_s_offers">عروض اليوم</string>
+    <string name="category">الفئات</string>
+    <string name="egp">%s جنيه</string>
+    <string name="_egp"> جنيه</string>
+    <string name="handmade">هاندميد</string>
+    <string name="accessories">اكسسوارات</string>
+    <string name="print">طباعة</string>
+    <string name="laser">ليزر</string>
+    <string name="resin">ريزن</string>
+    <string name="skins">جلود</string>
+    <string name="order_will_be_confirmed">سيتم تأكيد الطلب</string>
+    <string name="start_chat">بدا المحادثة</string>
+    <string name="select_image">اختار صورة</string>
+    <string name="date"> التاريخ :</string>
+    <string name="time"> الوقت :</string>
+
+    <string name="price">السعر : </string>
+    <string name="phone">"رقم الهاتف : "</string>
+    <string name="address">"العنوان : "</string>
+
+    <string name="email">"الاميل : "</string>
+    <string name="product_name">"عدد المنتجات : "</string>
+
+
+</resources>

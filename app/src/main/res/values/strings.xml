@@ -1,0 +1,70 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Farha Store</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="presed">Press double to exit</string>
+    <string name="login_hint_email">  Emil</string>
+    <string name="text_login">Login...</string>
+    <string name="login_hint_pass"> password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_SignUp">SignUp</string>
+    <string name="login_hint_fname">first name</string>
+    <string name="login_hint_lname">last name</string>
+    <string name="createNewAccount"> <u>Create New Account</u></string>
+    <string name="enter_your_phone"> phone</string>
+    <string name="i_have_already_account"><u>I have already account</u></string>
+    <string name="gender"> Gender : </string>
+    <string name="complete_this_fields">Complete these fields</string>
+    <string name="invalid_phone_number">Invalid phone number</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="my_profile_in_farha">My profile in <b>Farha</b></string>
+    <string name="about_us">About Us</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="update_my_profile_info">Update My Profile Info</string>
+    <string name="enter_your_address">address(city/village/street)</string>
+    <string name="Save">Save</string>
+    <string name="today_s_offers">Today\'s Offers</string>
+    <string name="category">Category </string>
+    <string name="egp">%s EGP</string>
+    <string name="_egp">EGP</string>
+    <string name="handmade">HandMade</string>
+    <string name="accessories">Accessories</string>
+    <string name="print">Print</string>
+    <string name="laser">Laser</string>
+    <string name="resin">Resin</string>
+    <string name="skins">Skins</string>
+    <string name="order_will_be_confirmed">order will be confirmed</string>
+    <string name="select_image" tools:ignore="MissingTranslation"> <u>select image</u></string>
+
+
+    <string-array name="category_name">
+        <item>Handmade</item>
+        <item>Accessories</item>
+        <item>Laser</item>
+        <item>Print</item>
+        <item>Resin</item>
+        <item>Skins</item>
+        <item>Add Offer</item>
+    </string-array>
+    <string name="title_activity_support" tools:ignore="MissingTranslation">SupportActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" tools:ignore="MissingTranslation">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="start_chat">Start Chat</string>
+    <string name="farha_store" translatable="false"> Farha .. Store  </string>
+    <string name="date">Date :</string>
+    <string name="time">Time :</string>
+    <string name="price">Total Price : </string>
+    <string name="phone">Phone : </string>
+    <string name="address">Address : </string>
+    <string name="email">Email :</string>
+    <string name="product_name"> Product Name : </string>
+
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav"
+    app:startDestination="@id/adminAddProductFragment">
+
+    <fragment
+        android:id="@+id/adminAddProductFragment"
+        android:name="com.example.farhastore.admin.ui.AdminAddProductFragment"
+        android:label="fragment_admin_add_product"
+        tools:layout="@layout/fragment_admin_add_product" />
+    <fragment
+        android:id="@+id/adminUserFragment"
+        android:name="com.example.farhastore.admin.ui.AdminUserFragment"
+        android:label="fragment_admin_user"
+        tools:layout="@layout/fragment_admin_user" >
+        <action
+            android:id="@+id/action_adminUserFragment_to_adminViewUserInfoFragment"
+            app:destination="@id/adminViewUserInfoFragment"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminViewUserInfoFragment"
+        android:name="com.example.farhastore.admin.ui.AdminViewUserInfoFragment"
+        android:label="AdminViewUserInfoFragment" />
+</navigation>
