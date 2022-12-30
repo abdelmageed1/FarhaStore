@@ -49,7 +49,16 @@ class CartFragment : Fragment() {
             if (it != null) {
                 setRecycle(it)
                 itemsInCart = it
+
+                if (it.size == 0)
+                {
+                    binding.CartIsEmpty.visibility = View.VISIBLE
+
+                }
             }
+
+
+
         }
 
         binding.btnBuyNow.setOnClickListener {

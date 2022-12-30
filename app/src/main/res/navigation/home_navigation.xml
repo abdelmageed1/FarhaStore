@@ -32,7 +32,7 @@
 
             app:launchSingleTop="true"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"

@@ -66,5 +66,6 @@
     <string name="address">Address : </string>
     <string name="email">Email :</string>
     <string name="product_name"> Product Name : </string>
+    <string name="product_count">Product Count :</string>
 
 </resources>

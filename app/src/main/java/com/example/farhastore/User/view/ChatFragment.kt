@@ -1,6 +1,7 @@
 package com.example.farhastore.User.view
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,7 +33,10 @@ class ChatFragment : Fragment() {
 
     private fun goToChatActivity() {
         binding.btnStartChat.setOnClickListener {
-            startActivity(Intent(context, ChatActivity::class.java))
+          //  startActivity(Intent(context, ChatActivity::class.java))
+            var intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("http://t.me/FarhaStore0")
+            startActivity(intent)
         }
     }
 

@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.farhastore.User.ViewModel.OrderViewModel
 import com.example.farhastore.User.model.Orders
 import com.example.farhastore.databinding.RowOrdersBinding
-import com.squareup.picasso.Picasso
 
 class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
     var listOrder: MutableList<Orders> = mutableListOf()
@@ -34,13 +33,16 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
          holder.dateOrder.text = current.date
          holder.timeOrder.text = current.time
          holder.countProduct.text = current.products.size.toString()
-
+         var productInfo = StringBuilder()
          var price = 0.0
              for (i in current.products)
-             {
+             {   productInfo.append(i.nameProduct).append(" ").append(i.priceProduct).append("\n")
                  price += i.priceProduct
              }
-        holder.totalPriceProduct.text ="${price} EGP"
+        holder.totalPriceProduct.text ="${price}"
+        holder.productItem.text = productInfo
+
+
 
 //
 //        Picasso.get().load(current.products.imageProduct.toString()).into(holder.imgProduct)
@@ -71,6 +73,7 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
        // var imgProduct = item.imageOrderProduct
         var countProduct = item.OrderCountProduct
         var totalPriceProduct = item.orderPriceProduct
+        var productItem = item.productItem
 
         var dateOrder = item.dateOrder
         var timeOrder = item.timeOrder
@@ -79,25 +82,7 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
     }
 
 
+
 }
 
 
-//
-//    fun getCurrentDate(): String {
-//        val calendar = Calendar.getInstance()
-//        val simpleDateFormat =
-//            SimpleDateFormat("MMM dd, yyyy")
-//        return simpleDateFormat.format(calendar.time)
-//    }
-//    fun getCurrentTime(): String {
-//        val calendar = Calendar.getInstance()
-//        val simpleDateFormat = SimpleDateFormat("HH:mm:ss a")
-//        return simpleDateFormat.format(calendar.time)
-//    }
-//
-//    fun getCurrentUser() : User {
-//        var pvm = ProfileViewModel()
-//        pvm.getUserInfo()
-//        var currentUser : User = pvm.mGetUserInfo.value as User
-//        return currentUser
-//    }

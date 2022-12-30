@@ -33,7 +33,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CardVH>() {
 
         Picasso.get().load(current.imageProduct.toString()).into(holder.imgProduct)
         holder.nameProduct.text = current.nameProduct
-        holder.priceProduct.text = "${current.priceProduct} EGP"
+        holder.priceProduct.text = "${current.priceProduct}"
 
        // holder.btnBuy.setOnClickListener {
             //  var order:Orders = Orders("",getCurrentUser(),getCurrentDate(),getCurrentTime(),current,false)

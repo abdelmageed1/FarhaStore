@@ -1,16 +1,36 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.FarhaStore" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.FarhaStore" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">#E91E63</item>
+        <item name="colorPrimaryVariant">#99E91E63</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorSecondary">#E91E63</item>
+        <item name="colorSecondaryVariant">@color/base_color</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/white</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="logoShapeStyle">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="backGround_profile">
+        <item name="cornerSize">10%</item>
+
+    </style>
+    <style name="styleProductImg">
+        <item name="cornerSizeTopLeft">10%</item>
+        <item name="cornerSizeTopRight">10%</item>
+
+    </style>
+    <style name="Theme.FarhaStore.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.FarhaStore.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.FarhaStore.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

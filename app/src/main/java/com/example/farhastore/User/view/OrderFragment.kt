@@ -44,10 +44,10 @@ class OrderFragment : Fragment() {
     }
 
     private fun setRecycle(it: MutableList<Orders>) {
-        var adapterCart = OrderAdapter()
+        var adapterOrder = OrderAdapter()
         binding.recycleOrders.layoutManager = LinearLayoutManager(context)
-        binding.recycleOrders.adapter = adapterCart
-        adapterCart.setListOrders(it)
+        binding.recycleOrders.adapter = adapterOrder
+        adapterOrder.setListOrders(it)
 
     }
 

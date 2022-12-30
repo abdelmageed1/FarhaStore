@@ -61,6 +61,7 @@
         </activity>
         <activity
             android:name=".User.view.HomeActivity"
+
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -68,6 +69,7 @@
         </activity>
         <activity
             android:name=".User.view.MainActivity"
+
             android:exported="true">
 
 

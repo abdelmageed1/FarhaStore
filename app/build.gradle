@@ -1,7 +1,8 @@
 plugins {
     id 'org.jetbrains.kotlin.android'
 
-    id 'com.android.application' version '7.3.0'
+
+    id 'com.android.application' version '7.3.1'
        id 'kotlin-android'
     id 'kotlin-parcelize'
      id 'kotlin-kapt'
@@ -13,7 +14,6 @@ plugins {
 
 
 
-
 android {
     namespace 'com.example.farhastore'
     compileSdk 33
@@ -21,33 +21,30 @@ android {
     defaultConfig {
         applicationId "com.example.farhastore"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
-        versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        tasks.register("prepareKotlinBuildScriptModel") {}
     }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
 
-
-    tasks.register("prepareKotlinBuildScriptModel"){}
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        kotlinOptions {
+            jvmTarget = '1.8'
+        }
+        buildFeatures {
+            viewBinding = true
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    buildFeatures{
-        viewBinding = true
-    }
-}
+
 
 dependencies {
 
@@ -58,7 +55,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
     implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
-    implementation 'com.google.firebase:firebase-auth:21.0.2'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
@@ -83,7 +80,6 @@ dependencies {
 
     // Image Slide show
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
-
     // Gif
      implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
 
