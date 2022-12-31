@@ -1,25 +1,24 @@
 package com.example.farhastore.User.Adapters
 
+
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-
-
 import com.example.farhastore.R
 import com.example.farhastore.User.Util.constant
-
-import com.example.farhastore.databinding.RowAllProductsBinding
 import com.example.farhastore.User.model.Products
 import com.example.farhastore.User.view.ProductPageFragment
-
+import com.example.farhastore.admin.ui.UpdateItemFragment
+import com.example.farhastore.databinding.RowAllProductsBinding
 import com.squareup.picasso.Picasso
 
 
 class BrowseAdapter(var whoCall: String) : RecyclerView.Adapter<BrowseAdapter.ProductViewHolder>() {
 
+    lateinit var categoryInUpdateProduct: String
     private var list: MutableList<Products> = mutableListOf<Products>()
     lateinit var context: Context
 
@@ -27,10 +26,13 @@ class BrowseAdapter(var whoCall: String) : RecyclerView.Adapter<BrowseAdapter.Pr
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         context = parent.context
         return ProductViewHolder(
-            RowAllProductsBinding.inflate(LayoutInflater.from(parent.context),
+            RowAllProductsBinding.inflate(
+                LayoutInflater.from(parent.context),
 
                 parent,
-                false))
+                false
+            )
+        )
     }
 
     @SuppressLint("SuspiciousIndentation")
@@ -52,15 +54,25 @@ class BrowseAdapter(var whoCall: String) : RecyclerView.Adapter<BrowseAdapter.Pr
                 constant.Browse -> {
                     Navigation.findNavController(it)
                         .navigate(R.id.action_browseFragment_to_productPageFragment)
+                    ProductPageFragment.getProduct(current)
                 }
                 constant.ShowCategoryItems -> {
                     Navigation.findNavController(it)
                         .navigate(R.id.action_showCategoryItems_to_productPageFragment)
+                    ProductPageFragment.getProduct(current)
 
                 }
+                constant.adminUpdateProduct -> {
+                    Navigation.findNavController(it)
+                        .navigate(R.id.action_updateProductFragment_to_updateItemFragment)
+                    UpdateItemFragment.getProduct(current)
+                    UpdateItemFragment.category = categoryInUpdateProduct
+
+                }
+
             }
 
-            ProductPageFragment.getProduct(current)
+
         }
 
     }

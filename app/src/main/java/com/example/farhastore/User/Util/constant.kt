@@ -21,11 +21,13 @@ object constant {
     const val Resin: String = "Resin"
     const val Skins: String = "Skins"
     const val Browse: String = "Browse"
+    const val offer: String = "Offers"
+    const val adminUpdateProduct: String = "adminUpdate"
     const val ShowCategoryItems: String = "ShowCategoryItems"
 
 
-    const val Email_Admin: String = "z@gmail.com"
-    const val Pass_Admin: String = "123456"
+    const val Email_Admin: String = "omfarha2011@gmail.com"
+    const val Pass_Admin: String = "omfarha2011"
     const val AdminSecureVerfiy: String = "z"
 
 
@@ -50,7 +52,7 @@ object constant {
     var refSkinsProduct = Firebase.database.reference.child("Products")
         .child("Category").child("Skins")
 
-     var refDBOffers = Firebase.database.reference.child("Offers")
+    var refDBOffers = Firebase.database.reference.child("Offers")
 
 
 }

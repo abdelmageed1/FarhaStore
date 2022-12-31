@@ -22,6 +22,7 @@ class RepoAddOfferItem {
     var mutableSuccessSetOffer =MutableLiveData<Boolean>()
     var mutableFailureSetOffer = MutableLiveData<String>()
 
+    var mutableSuccessSetOfferWithLinkImg =MutableLiveData<Boolean>()
 
     suspend fun setOffersItem(products: Products) {
 
@@ -47,6 +48,13 @@ class RepoAddOfferItem {
             }
 
 
+    }
+    fun setOffersWithLinkImg(products: Products){
+        var path = constant.refDBOffers.push()
+        products.key = path.key!!
+        path.setValue(products).addOnCompleteListener {
+            mutableSuccessSetOfferWithLinkImg.value = it.isSuccessful
+        }
     }
 
 

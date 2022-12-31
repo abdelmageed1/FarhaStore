@@ -7,6 +7,13 @@
         android:title="add"
         />
 
+    <item
+        android:id="@+id/updateProductFragment"
+        android:icon="@drawable/icongift"
+        android:title="update"
+        />
+
+
     <item android:id="@+id/adminUserFragment"
     android:title="users"
     android:icon="@drawable/ic_users"

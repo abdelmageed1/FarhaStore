@@ -64,12 +64,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_admin_add_image" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:text="or add img link"
+            app:layout_constraintBottom_toTopOf="@+id/et_admin_add_productName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectImage" />
+
+        <EditText
+            android:id="@+id/etLinkImgProduct"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/selectImage"
+            app:layout_constraintTop_toBottomOf="@+id/selectImage" />
+
         <EditText
             android:id="@+id/et_admin_add_productName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="110dp"
             android:hint="Enter Product name "
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -114,10 +131,24 @@
             android:text="send"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_admin_add_productPrice"
             app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/btn_admin_addProductWithLinkImg"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/shape_btn"
+            android:inputType="text"
+            android:text="send with img link"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/et_admin_add_productPrice" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

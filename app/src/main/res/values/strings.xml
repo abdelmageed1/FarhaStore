@@ -46,7 +46,7 @@
         <item>Print</item>
         <item>Resin</item>
         <item>Skins</item>
-        <item>Add Offer</item>
+        <item>Offer</item>
     </string-array>
     <string name="title_activity_support" tools:ignore="MissingTranslation">SupportActivity</string>
     <!-- Strings used for fragments for navigation -->

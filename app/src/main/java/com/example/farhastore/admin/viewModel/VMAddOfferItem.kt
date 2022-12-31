@@ -16,6 +16,10 @@ class VMAddOfferItem :ViewModel() {
     var mutableAddOfferSuccess = repoAddOfferInstance.mutableSuccessSetOffer
     var mutableAddOfferFailure = repoAddOfferInstance.mutableFailureSetOffer
 
+    var mAddOfferSuccessWithLInkImg= repoAddOfferInstance.mutableSuccessSetOfferWithLinkImg
+
+
+
 
 
 
@@ -24,6 +28,11 @@ class VMAddOfferItem :ViewModel() {
         viewModelScope.launch (Dispatchers.IO){
              repoAddOfferInstance.setOffersItem(product)
         }
+    }
+
+    fun setOfferWithLinkImg(product :Products)
+    {
+        repoAddOfferInstance.setOffersWithLinkImg(product)
     }
 
 

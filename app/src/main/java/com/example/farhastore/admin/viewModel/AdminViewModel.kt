@@ -15,6 +15,8 @@ class AdminViewModel :ViewModel() {
     var mFailureAddProduct = adminRepo.mutableFailureAddProduct
     var mSuccessAddProduct = adminRepo.mutableSuccessAddProduct
 
+    var mSuccessAddProductWithLinkImg = adminRepo.mutableSuccessAddProductWithLinkImg
+
 
     fun getAllUsers(){
      viewModelScope.launch (Dispatchers.IO){
@@ -26,6 +28,10 @@ class AdminViewModel :ViewModel() {
     fun setProduct(products: Products, categoryName :String)
     {
         adminRepo.setProduct(products , categoryName)
+    }
+    fun setProductWithImgLink(products: Products, categoryName :String)
+    {
+        adminRepo.setProductWithImgLink(products, categoryName)
     }
 
     fun mGetAllUsers() =adminRepo.mGetUsersInfo

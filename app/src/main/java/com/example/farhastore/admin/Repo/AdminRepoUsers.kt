@@ -26,8 +26,9 @@ class adminRepoUsers {
 
 
     var mutableSuccessAddProduct = MutableLiveData<Boolean>()
-    var mutableFailureAddProduct=  MutableLiveData<String>()
+    var mutableFailureAddProduct = MutableLiveData<String>()
 
+    var mutableSuccessAddProductWithLinkImg = MutableLiveData<Boolean>()
 
 
     suspend fun getUser() {
@@ -65,10 +66,10 @@ class adminRepoUsers {
                             products.imageProduct = "${it.result}"
                             path.setValue(products)
 
-                        mutableSuccessAddProduct.value = it.isSuccessful
+                            mutableSuccessAddProduct.value = it.isSuccessful
                         }
                             .addOnFailureListener { messsage ->
-                       mutableFailureAddProduct.value = messsage.message
+                                mutableFailureAddProduct.value = messsage.message
                             }
                     }
             }
@@ -143,7 +144,17 @@ class adminRepoUsers {
                     }
             }
         }
+    }
 
+
+    fun setProductWithImgLink(products: Products, categoryName: String) {
+        var refProduct = Firebase.database.reference.child("Products")
+            .child("Category").child(categoryName)
+        var path = refProduct.push()
+        products.key = path.key!!
+        path.setValue(products).addOnCompleteListener {
+            mutableSuccessAddProductWithLinkImg.value = it.isSuccessful
+        }
 
     }
 
