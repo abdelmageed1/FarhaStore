@@ -38,4 +38,18 @@
         android:name="com.example.farhastore.admin.ui.UpdateItemFragment"
         android:label="fragment_update_item"
         tools:layout="@layout/fragment_update_item" />
+    <fragment
+        android:id="@+id/ordersAdminFragment"
+        android:name="com.example.farhastore.admin.ui.OrdersAdminFragment"
+        android:label="fragment_orders_admin"
+        tools:layout="@layout/fragment_orders_admin" >
+        <action
+            android:id="@+id/action_ordersAdminFragment_to_viewOrderUserFragment"
+            app:destination="@id/viewOrderUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewOrderUserFragment"
+        android:name="com.example.farhastore.admin.ui.ViewOrderUserFragment"
+        android:label="fragment_view_order_user"
+        tools:layout="@layout/fragment_view_order_user" />
 </navigation>

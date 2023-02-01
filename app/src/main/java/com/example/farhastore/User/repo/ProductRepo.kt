@@ -6,7 +6,6 @@ import com.example.farhastore.User.model.Products
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.getValue
 
 class ProductRepo {
 
@@ -22,7 +21,6 @@ class ProductRepo {
     var mSkinsProducts: MutableLiveData<MutableList<Products>> = MutableLiveData()
 
 
-
     private var arrAllProduct: MutableList<Products> = mutableListOf()
 
 
@@ -32,8 +30,6 @@ class ProductRepo {
     private var arrPrintProduct: MutableList<Products> = mutableListOf()
     private var arrResinProduct: MutableList<Products> = mutableListOf()
     private var arrSkinsProduct: MutableList<Products> = mutableListOf()
-
-
 
 
     suspend fun getHandmadeProductSFromDB() {
@@ -54,8 +50,6 @@ class ProductRepo {
 
 
     }
-
-
 
 
     suspend fun getAccessoriesProductSFromDB() {
@@ -159,8 +153,6 @@ class ProductRepo {
         })
 
     }
-
-
 
 
     companion object {

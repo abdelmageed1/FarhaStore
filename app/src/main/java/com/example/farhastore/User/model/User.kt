@@ -6,6 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 class User (
 
+    var userId:String ="",
     var fName:String ="",
     var lName:String ="",
     var email :String ="" ,

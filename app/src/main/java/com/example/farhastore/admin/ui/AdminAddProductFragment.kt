@@ -17,7 +17,6 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import com.example.farhastore.R
 import com.example.farhastore.User.Util.constant
 import com.example.farhastore.User.ViewModel.ProfileViewModel
@@ -32,8 +31,8 @@ class AdminAddProductFragment : Fragment() {
     lateinit var binding: FragmentAdminAddProductBinding
     private lateinit var launcher: ActivityResultLauncher<String>
 
-   lateinit var adminProductViewModel : AdminViewModel
-   lateinit var vmAddOfferItem : VMAddOfferItem
+    lateinit var adminProductViewModel: AdminViewModel
+    lateinit var vmAddOfferItem: VMAddOfferItem
     lateinit var uriImage: Uri
 
     var index = 0
@@ -69,8 +68,8 @@ class AdminAddProductFragment : Fragment() {
 
 
         binding.btnAdminAddProduct.setOnClickListener {
-             showProgressAndHideBtn()
-             sendProduct()
+            showProgressAndHideBtn()
+            sendProduct()
 
         }
 
@@ -81,6 +80,7 @@ class AdminAddProductFragment : Fragment() {
 
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun sendProductWithLinkImg() {
         var productName = binding.etAdminAddProductName.text.toString()
         var productDesc = binding.etAdminAddProductDesc.text.toString()
@@ -88,82 +88,79 @@ class AdminAddProductFragment : Fragment() {
         var imgLink = binding.etLinkImgProduct.text.toString()
         if (productName.isNotEmpty() && productDesc.isNotEmpty() && imgLink.isNotEmpty() && productPrice.isNotEmpty()) {
             var product = Products("", productName, productDesc, imgLink, productPrice.toDouble())
-           var category = ""
+            var category = ""
 
-              when(index )
-              {
-                  0->{
-                      adminProductViewModel.setProductWithImgLink(product,constant.HandMade)
-                      adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner){
-                          if (it)
-                              Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                          else
-                              Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
-                      }
-                  }
+            when (index) {
+                0 -> {
+                    adminProductViewModel.setProductWithImgLink(product, constant.HandMade)
+                    adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner) {
+                        if (it)
+                            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                        else
+                            Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
-                  1-> {
-                      adminProductViewModel.setProductWithImgLink(product,constant.Accessories)
-                      adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner){
-                          if (it)
-                              Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                          else
-                              Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
-                      }
+                1 -> {
+                    adminProductViewModel.setProductWithImgLink(product, constant.Accessories)
+                    adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner) {
+                        if (it)
+                            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                        else
+                            Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
+                    }
 
-                  }
-                  2-> {
-                      adminProductViewModel.setProductWithImgLink(product,constant.Laser)
-                      adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner){
-                          if (it)
-                              Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                          else
-                              Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
-                      }}
+                }
+                2 -> {
+                    adminProductViewModel.setProductWithImgLink(product, constant.Laser)
+                    adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner) {
+                        if (it)
+                            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                        else
+                            Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
-                  3-> {
-                      adminProductViewModel.setProductWithImgLink(product,constant.Print)
-                      adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner){
-                          if (it)
-                              Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                          else
-                              Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
-                      }
-                  }
-                  4-> {
-                      adminProductViewModel.setProductWithImgLink(product,constant.Resin)
-                      adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner){
-                          if (it)
-                              Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                          else
-                              Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
-                      }
-                  }
-                  5-> {
+                3 -> {
+                    adminProductViewModel.setProductWithImgLink(product, constant.Print)
+                    adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner) {
+                        if (it)
+                            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                        else
+                            Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                4 -> {
+                    adminProductViewModel.setProductWithImgLink(product, constant.Resin)
+                    adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner) {
+                        if (it)
+                            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                        else
+                            Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                5 -> {
 
-                      adminProductViewModel.setProductWithImgLink(product,constant.Skins)
-                      adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner){
-                          if (it)
-                              Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                          else
-                              Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
-                      }
+                    adminProductViewModel.setProductWithImgLink(product, constant.Skins)
+                    adminProductViewModel.mSuccessAddProductWithLinkImg.observe(viewLifecycleOwner) {
+                        if (it)
+                            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                        else
+                            Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
+                    }
 
-                  }
+                }
 
-                  6->{
-                      vmAddOfferItem.setOfferWithLinkImg(product)
-                      vmAddOfferItem.mAddOfferSuccessWithLInkImg.observe(viewLifecycleOwner){
-                          Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                      }
-                  }
-              }
-
-
+                6 -> {
+                    vmAddOfferItem.setOfferWithLinkImg(product)
+                    vmAddOfferItem.mAddOfferSuccessWithLInkImg.observe(viewLifecycleOwner) {
+                        Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
 
 
-        }
-        else{
+        } else {
             Toast.makeText(context, "Complete this Fields", Toast.LENGTH_SHORT).show()
         }
 
@@ -186,24 +183,23 @@ class AdminAddProductFragment : Fragment() {
 
             var productImg = uriImage.toString()
 
-            var product = Products("", productName, productDesc, productImg, productPrice.toDouble())
+            var product =
+                Products("", productName, productDesc, productImg, productPrice.toDouble())
             // Category name
             when (index) {
                 0 -> {
 
                     adminProductViewModel.setProduct(product, constant.HandMade)
-                    adminProductViewModel.mSuccessAddProduct.observe(viewLifecycleOwner){
-                        if (it == true)
-                        {
+                    adminProductViewModel.mSuccessAddProduct.observe(viewLifecycleOwner) {
+                        if (it == true) {
                             showBtnAndHideProgress()
                             reSetView()
                             Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                        }
-                        else{
+                        } else {
                             Toast.makeText(context, "Failure ", Toast.LENGTH_SHORT).show()
                         }
                     }
-                    adminProductViewModel.mFailureAddProduct.observe(viewLifecycleOwner){
+                    adminProductViewModel.mFailureAddProduct.observe(viewLifecycleOwner) {
 
                         Toast.makeText(context, "Failure : ${it}", Toast.LENGTH_SHORT).show()
                     }
@@ -240,34 +236,32 @@ class AdminAddProductFragment : Fragment() {
                     reSetView()
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
                 }
-              6 ->
-              {
-                  vmAddOfferItem.setOffer(product)
-                  vmAddOfferItem.mutableAddOfferSuccess.observe(viewLifecycleOwner){
-                      if (it)
-                      {   showBtnAndHideProgress()
-                          reSetView()
-                          Toast.makeText(context, "uploaded successfully", Toast.LENGTH_SHORT).show()
-                      }
-                      else
-                      {
-                          showBtnAndHideProgress()
-                       vmAddOfferItem.mutableAddOfferFailure.observe(viewLifecycleOwner){message->
-                         //  Toast.makeText(context, "${message.toString()}", Toast.LENGTH_LONG).show()
-                           showDialogError(message)
-                       }
-                      }
-                  }
+                6 -> {
+                    vmAddOfferItem.setOffer(product)
+                    vmAddOfferItem.mutableAddOfferSuccess.observe(viewLifecycleOwner) {
+                        if (it) {
+                            showBtnAndHideProgress()
+                            reSetView()
+                            Toast.makeText(context, "uploaded successfully", Toast.LENGTH_SHORT)
+                                .show()
+                        } else {
+                            showBtnAndHideProgress()
+                            vmAddOfferItem.mutableAddOfferFailure.observe(viewLifecycleOwner) { message ->
+                                //  Toast.makeText(context, "${message.toString()}", Toast.LENGTH_LONG).show()
+                                showDialogError(message)
+                            }
+                        }
+                    }
 
-              }
+                }
             }
 
 
             // productViewModel.setProduct(product)
 
         } else {
-             Toast.makeText(context, "Complete this Fields", Toast.LENGTH_LONG).show()
-           // showDialogError("Complete this Fields")
+            Toast.makeText(context, "Complete this Fields", Toast.LENGTH_LONG).show()
+            // showDialogError("Complete this Fields")
             showBtnAndHideProgress()
         }
     }
@@ -316,7 +310,7 @@ class AdminAddProductFragment : Fragment() {
                         5 -> {
                             index = 5
                         }
-                     6 -> {
+                        6 -> {
                             index = 6
                         }
 
@@ -356,22 +350,23 @@ class AdminAddProductFragment : Fragment() {
 
     }
 
-    fun showProgressAndHideBtn(){
+    fun showProgressAndHideBtn() {
         binding.btnAdminAddProduct.visibility = View.GONE
         binding.progressAddProduct.visibility = View.VISIBLE
     }
-    fun showBtnAndHideProgress(){
+
+    fun showBtnAndHideProgress() {
         binding.progressAddProduct.visibility = View.GONE
         binding.btnAdminAddProduct.visibility = View.VISIBLE
     }
 
-    fun showDialogError( message:String){
+    fun showDialogError(message: String) {
         var builder = AlertDialog.Builder(context)
         builder.apply {
             setTitle("Error")
             setIcon(R.mipmap.ic_farha_icon_foreground)
             setMessage(message)
-            setPositiveButton("Ok",DialogInterface.OnClickListener { dialog, which ->  }
+            setPositiveButton("Ok", DialogInterface.OnClickListener { dialog, which -> }
             )
             setCancelable(true)
 

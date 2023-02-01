@@ -33,6 +33,10 @@
             app:launchSingleTop="true"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_productPageFragment"
+            app:destination="@id/productPageFragment"
+            app:enterAnim="@anim/animate_farg" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
@@ -108,9 +112,7 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="false" />
-        <action
-            android:id="@+id/action_showCategoryItems_to_supportActivity"
-            app:destination="@id/supportActivity" />
+ >
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
@@ -121,15 +123,22 @@
         android:id="@+id/connectUsFragment"
         android:name="com.example.farhastore.User.view.ConnectUsFragment"
         android:label="fragment_connect_us"
-        tools:layout="@layout/fragment_connect_us" />
+        tools:layout="@layout/fragment_connect_us" >
+        <action
+            android:id="@+id/action_connectUsFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/animate_farg" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.farhastore.User.view.AboutFragment"
         android:label="fragment_about"
-        tools:layout="@layout/fragment_about" />
-    <activity
-        android:id="@+id/supportActivity"
-        android:name="com.example.farhastore.User.Util.SupportActivity"
-        android:label="activity_support"
-        tools:layout="@layout/activity_support" />
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/animate_farg"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+
 </navigation>

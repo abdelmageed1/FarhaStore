@@ -42,7 +42,6 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
         var itemsInCart = mutableListOf<Products>()
 
         cartViewModel.getMutableCartItem().observe(viewLifecycleOwner) {
@@ -50,13 +49,11 @@ class CartFragment : Fragment() {
                 setRecycle(it)
                 itemsInCart = it
 
-                if (it.size == 0)
-                {
+                if (it.size == 0) {
                     binding.CartIsEmpty.visibility = View.VISIBLE
 
                 }
             }
-
 
 
         }
@@ -64,27 +61,24 @@ class CartFragment : Fragment() {
         binding.btnBuyNow.setOnClickListener {
             // add to Order
 
-            if (itemsInCart.size > 0)
-            {
-                var order: Orders = Orders(" ", " ", getCurrentDate(), getCurrentTime(), itemsInCart, false)
+            if (itemsInCart.size > 0) {
+                var order: Orders =
+                    Orders(" ", " ", getCurrentDate(), getCurrentTime(), itemsInCart, false)
                 OrderViewModel().setOrder(order)
-                Toast.makeText(context, "added Order ${itemsInCart.size}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "added Order ${itemsInCart.size}", Toast.LENGTH_SHORT)
+                    .show()
 
                 var cartViewModel = CartViewModel()
 
                 // remove item in cart
-                for (i in  itemsInCart)
-                {
+                for (i in itemsInCart) {
                     cartViewModel.removeCartItem(i)
 
                 }
                 itemsInCart.clear()
-            }
-            else{
+            } else {
                 Toast.makeText(context, "Cart Is Empty", Toast.LENGTH_SHORT).show()
             }
-
-
 
 
         }
@@ -100,6 +94,7 @@ class CartFragment : Fragment() {
         adapterCart.setList(it)
 
     }
+
     fun getCurrentDate(): String {
         val calendar = Calendar.getInstance()
         val simpleDateFormat =
@@ -113,14 +108,4 @@ class CartFragment : Fragment() {
         return simpleDateFormat.format(calendar.time)
     }
 
-    //   fun addProduct() = constant.listProducts.add(products!!)
-
-//    companion object {
-//          var products: Products? = null
-//
-//
-//        fun getProduct(products: Products) {
-//            this.products = products
-//        }
-//    }
 }

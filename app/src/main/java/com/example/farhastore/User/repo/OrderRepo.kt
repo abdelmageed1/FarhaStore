@@ -54,19 +54,7 @@ class OrderRepo {
             }
 
         })
-//    refMyOrders.addValueEventListener(object : ValueEventListener {
-//
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                arrOrders.clear()
-//                 for (i in snapshot.children)
-//                 {
-//                     arrOrders.add(i.getValue<Orders>(Orders::class.java)!!)
-//                 }
-//                mOrders.postValue(arrOrders)
-//            }
-//            override fun onCancelled(error: DatabaseError) {
-//            }
-//        })
+
 
 
     }

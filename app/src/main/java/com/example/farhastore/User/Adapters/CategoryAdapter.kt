@@ -2,20 +2,16 @@ package com.example.farhastore.User.Adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.farhastore.R
-import com.example.farhastore.SupportActivity
 import com.example.farhastore.User.Util.constant
 import com.example.farhastore.User.model.Category
 import com.example.farhastore.User.view.ShowCategoryItems
 import com.example.farhastore.databinding.RowCategoryBinding
-
-
 
 
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
@@ -27,11 +23,14 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
     @SuppressLint("SuspiciousIndentation")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         context = parent.context
-        return CategoryViewHolder(RowCategoryBinding.inflate(LayoutInflater.from(parent.context),
-            parent,
-            false))
+        return CategoryViewHolder(
+            RowCategoryBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
-
 
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
@@ -57,8 +56,8 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
                     ShowCategoryItems.getCategory(constant.Print)
                 }
                 R.drawable.category_laser -> {
-                   goToShowCategory(it)
-                     ShowCategoryItems.getCategory(constant.Laser)
+                    goToShowCategory(it)
+                    ShowCategoryItems.getCategory(constant.Laser)
                     // context.startActivity(Intent(context , SupportActivity::class.java))
                 }
                 R.drawable.resin_category1 -> {

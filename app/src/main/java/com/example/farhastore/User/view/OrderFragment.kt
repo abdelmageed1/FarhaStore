@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.farhastore.R
 import com.example.farhastore.User.Adapters.OrderAdapter
 import com.example.farhastore.User.ViewModel.OrderViewModel
 import com.example.farhastore.User.model.Orders
@@ -35,10 +33,18 @@ class OrderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         orderViewModel.getMutableOrder().observe(viewLifecycleOwner) {
-            setRecycle(it)
+            if (it != null)
+            {
+                setRecycle(it)
+
+
+                    if (it.size == 0) {
+                        binding.OrderIsEmpty.visibility = View.VISIBLE
+
+                    }
+            }
+
         }
-
-
 
 
     }

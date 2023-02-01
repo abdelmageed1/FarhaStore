@@ -1,4 +1,4 @@
-package com.example.farhastore.User.Adapters
+package com.example.farhastore.admin.Adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,19 +8,25 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.farhastore.R
+import com.example.farhastore.User.Adapters.OrderAdapter
 import com.example.farhastore.User.ViewModel.OrderViewModel
 import com.example.farhastore.User.model.Orders
+import com.example.farhastore.admin.Repo.RepoOrderAdmin
+import com.example.farhastore.admin.viewModel.OrderAdminViewModel
 import com.example.farhastore.databinding.RowOrdersBinding
 
-class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
+class AdapterOrderAdmin: RecyclerView.Adapter<AdapterOrderAdmin.OrderVH>() {
     var listOrder: MutableList<Orders> = mutableListOf()
+
 
     lateinit var context: Context
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderVH {
         context = parent.context
-        return OrderVH(RowOrdersBinding.inflate(LayoutInflater.from(parent.context),
+        return OrderVH(
+            RowOrdersBinding.inflate(
+                LayoutInflater.from(parent.context),
             parent,
             false))
 
@@ -32,15 +38,15 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
 
 
 
-         holder.dateOrder.text = current.date
-         holder.timeOrder.text = current.time
-         holder.countProduct.text = current.products.size.toString()
-         var productInfo = StringBuilder()
-         var price = 0.0
-             for (i in current.products)
-             {   productInfo.append(i.nameProduct).append(" ").append(i.priceProduct).append("\n")
-                 price += i.priceProduct
-             }
+        holder.dateOrder.text = current.date
+        holder.timeOrder.text = current.time
+        holder.countProduct.text = current.products.size.toString()
+        var productInfo = StringBuilder()
+        var price = 0.0
+        for (i in current.products)
+        {   productInfo.append(i.nameProduct).append(" ").append(i.priceProduct).append("\n")
+            price += i.priceProduct
+        }
         holder.totalPriceProduct.text ="${price}"
         holder.productItem.text = productInfo
 
@@ -48,21 +54,34 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
 
         holder.btnRemove.setOnClickListener {
 
-            OrderViewModel().removeOrderItem(current)
+            OrderAdminViewModel().removeOrderItem(uid,current)
             Toast.makeText(context, "order removed", Toast.LENGTH_SHORT).show()
             listOrder.remove(current)
         }
 
+        holder.btnBuy.setOnClickListener {
+            RepoOrderAdmin().confirm(uid,current)
 
-        if (current.isConfirmed){
-            holder.btnRemove.visibility = View.GONE
             holder.btnBuy.apply {
                 text = "تم تأكيد الطلب بنجاح"
-
+                setBackgroundColor(R.color.green)
             }
-            holder.btnBuy.setBackgroundColor(R.color.green)
 
         }
+
+
+
+        if (current.isConfirmed){
+            holder.btnBuy.apply {
+                text = "تم تأكيد الطلب بنجاح"
+                setBackgroundColor(R.color.green)
+            }
+
+
+        }
+
+        // go to whats app user number
+
 
 
     }
@@ -89,9 +108,10 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
         var btnBuy = item.btnCartBuy
 
     }
+    companion object {
 
+        lateinit var uid :String
+    }
 
 
 }
-
-

@@ -17,20 +17,8 @@
         android:theme="@style/Theme.FarhaStore"
         android:usesCleartextTraffic="true"
         tools:targetApi="32">
-        <activity
-            android:name=".SupportActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".User.Util.SupportActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
+
         <activity
             android:name=".User.view.ChatActivity"
             android:exported="false">

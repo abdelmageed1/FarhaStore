@@ -84,7 +84,6 @@ class BrowseAdapter(var whoCall: String) : RecyclerView.Adapter<BrowseAdapter.Pr
     @JvmName("setList1")
     fun setList(list: MutableList<Products>) {
         this.list = list
-
         notifyDataSetChanged()
     }
 

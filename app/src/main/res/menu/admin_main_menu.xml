@@ -13,11 +13,18 @@
         android:title="update"
         />
 
+  <item
+        android:id="@+id/ordersAdminFragment"
+        android:icon="@drawable/ic_order"
+        android:title="orders"
+        />
+
 
     <item android:id="@+id/adminUserFragment"
     android:title="users"
     android:icon="@drawable/ic_users"
     />
+
 
 
 </menu>

@@ -7,13 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.farhastore.User.ViewModel.CartViewModel
-import com.example.farhastore.User.ViewModel.OrderViewModel
-import com.example.farhastore.User.model.Orders
 import com.example.farhastore.User.model.Products
-
 import com.example.farhastore.databinding.RowCartBinding
 import com.squareup.picasso.Picasso
-import java.text.SimpleDateFormat
 import java.util.*
 
 class CartAdapter : RecyclerView.Adapter<CartAdapter.CardVH>() {
@@ -35,13 +31,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CardVH>() {
         holder.nameProduct.text = current.nameProduct
         holder.priceProduct.text = "${current.priceProduct}"
 
-       // holder.btnBuy.setOnClickListener {
-            //  var order:Orders = Orders("",getCurrentUser(),getCurrentDate(),getCurrentTime(),current,false)
-//            var order: Orders = Orders(" ", " ", getCurrentDate(), getCurrentTime(), current, false)
-//            OrderViewModel().setOrder(order)
-//            Toast.makeText(context, "added Order", Toast.LENGTH_SHORT).show()
-//            removeFromCart(current)
-    //    }
+
 
         holder.btnRemove.setOnClickListener {
 
@@ -76,20 +66,6 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CardVH>() {
         var btnRemove = item.btnRemoveCertItem
 
     }
-
-
-//    fun getCurrentDate(): String {
-//        val calendar = Calendar.getInstance()
-//        val simpleDateFormat =
-//            SimpleDateFormat("MMM dd, yyyy")
-//        return simpleDateFormat.format(calendar.time)
-//    }
-//
-//    fun getCurrentTime(): String {
-//        val calendar = Calendar.getInstance()
-//        val simpleDateFormat = SimpleDateFormat("HH:mm:ss ")
-//        return simpleDateFormat.format(calendar.time)
-//    }
 
 
 }

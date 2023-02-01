@@ -13,6 +13,7 @@ import com.example.farhastore.User.ViewModel.AuthViewModel
 import com.example.farhastore.admin.ui.AdminActivity
 import com.example.farhastore.databinding.ActivityLoginBinding
 
+@Suppress("DEPRECATION")
 class Login : AppCompatActivity() {
 
     lateinit var binding: ActivityLoginBinding
@@ -94,9 +95,11 @@ class Login : AppCompatActivity() {
             }
 
         } else {
-            Toast.makeText(applicationContext,
+            Toast.makeText(
+                applicationContext,
                 "${resources.getString(R.string.complete_this_fields)}",
-                Toast.LENGTH_SHORT).show()
+                Toast.LENGTH_SHORT
+            ).show()
             hideProgress()
             showBtnSignUp()
         }

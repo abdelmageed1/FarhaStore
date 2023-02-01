@@ -2,12 +2,10 @@ package com.example.farhastore.User.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -19,6 +17,7 @@ import com.example.farhastore.User.Adapters.CategoryAdapter
 import com.example.farhastore.User.ViewModel.HomeViewModel
 import com.example.farhastore.User.ViewModel.ProfileViewModel
 import com.example.farhastore.User.model.Category
+import com.example.farhastore.User.model.Products
 import com.example.farhastore.databinding.FragmentHomeBinding
 import com.squareup.picasso.Picasso
 
@@ -63,19 +62,15 @@ class HomeFragment : Fragment() {
         ////////////////////
         goToChat()
 
+
+
+//
 //        binding.slider.setItemClickListener(object : ItemClickListener {
 //            override fun onItemSelected(position: Int) {
-//                Toast.makeText(context, "number ${position + 1}", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context, "num $position ", Toast.LENGTH_SHORT).show()
 //            }
+//
 //        })
-
-
-        binding.slider.setItemClickListener(object :ItemClickListener{
-            override fun onItemSelected(position: Int) {
-                Toast.makeText(context, "num $position ", Toast.LENGTH_SHORT).show()
-             }
-
-        })
 
 
     }
@@ -88,17 +83,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun setImageSlider() {
-          homeViewModel.getOffers()
+        var productOffer = mutableListOf<Products>()
+        homeViewModel.getOffers()
         var imageList = ArrayList<SlideModel>()
-        homeViewModel.mutableOffers().observe(viewLifecycleOwner){it->
-            if(it.isNotEmpty() )
-            {  imageList.clear()
-              for (i in it )
-              {
-                   imageList.add(SlideModel(i.imageProduct.toString()))
-              }
-            }
-            else {
+        homeViewModel.mutableOffers().observe(viewLifecycleOwner) { it ->
+            if (it.isNotEmpty()) {
+                imageList.clear()
+                for (i in it) {
+                    productOffer.add(i)
+                    imageList.add(SlideModel(i.imageProduct.toString()))
+                }
+            } else {
 
                 imageList.add(SlideModel("https://bit.ly/2YoJ77H"))
                 imageList.add(SlideModel("https://bit.ly/2BteuF2"))
@@ -106,24 +101,31 @@ class HomeFragment : Fragment() {
             }
 
             binding.slider.setImageList(imageList)
+            binding.slider.setItemClickListener(object : ItemClickListener {
+                override fun onItemSelected(position: Int) {
+                   // Toast.makeText(context, "num ${productOffer[position].priceProduct} ", Toast.LENGTH_SHORT).show()
+                  //action_homeFragment_to_productPageFragment
+
+                    Navigation.findNavController(binding.slider).navigate(R.id.action_homeFragment_to_productPageFragment)
+                    ProductPageFragment.getProduct(productOffer[position])
+                }
+
+            })
         }
 
 
 
 
 
-
-
-//        binding.slider.setItemClickListener(object : ItemClickListener {
-//            override fun onItemSelected(position: Int) {
-//                Toast.makeText(context, "number ${position + 1}", Toast.LENGTH_SHORT).show()
-//            }
-//        })
     }
+
+
+
 
     private fun goToProfile() {
         binding.imgHomeUserImage.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_profileFragment)
+
         }
     }
 
@@ -142,7 +144,12 @@ class HomeFragment : Fragment() {
 
     private fun setArrayCategory() {
         arrCategory.add(Category("${getString(R.string.handmade)} ", R.drawable.handmade_category))
-        arrCategory.add(Category("${getString(R.string.accessories)}", R.drawable.accessories_category))
+        arrCategory.add(
+            Category(
+                "${getString(R.string.accessories)}",
+                R.drawable.accessories_category
+            )
+        )
         arrCategory.add(Category("${getString(R.string.print)}", R.drawable.print_category1))
         arrCategory.add(Category("${getString(R.string.laser)}", R.drawable.category_laser))
         arrCategory.add(Category("${getString(R.string.resin)}", R.drawable.resin_category1))

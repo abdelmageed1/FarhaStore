@@ -63,16 +63,7 @@ class ProfileFragment : Fragment() {
 
 
     }
-//
-//    private fun onBack() {
-//        requireActivity().onBackPressedDispatcher.addCallback(object :
-//            OnBackPressedCallback(true) {
-//            override fun handleOnBackPressed() {
-//                findNavController().navigate(R.id.action_profileFragment_to_homeFragment)
-//            }
-//
-//        })
-    //   }
+
 
     private fun updateDialogProfileInfo() {
         binding.iconProfileEdit.setOnClickListener {
@@ -93,7 +84,7 @@ class ProfileFragment : Fragment() {
 
                     if (fName.isNotEmpty() && lName.isNotEmpty() && address.isNotEmpty()) {
                         if (phone.length == 11) {
-                            var user = User(fName, lName, address = address, phone = phone)
+                            var user = User(fName = fName, lName = lName, address = address, phone = phone)
                             setUserInfoToDB(user)
                             Toast.makeText(context, "Saved", Toast.LENGTH_SHORT).show()
                             alter.dismiss()

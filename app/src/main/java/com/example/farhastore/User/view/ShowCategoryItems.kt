@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.farhastore.R
 import com.example.farhastore.User.Adapters.BrowseAdapter
@@ -112,7 +110,7 @@ class ShowCategoryItems : Fragment() {
 
     private fun goToHome() {
         binding.imgBack.setOnClickListener {
-             Navigation.findNavController(it).navigate(R.id.action_showCategoryItems_to_homeFragment)
+            Navigation.findNavController(it).navigate(R.id.action_showCategoryItems_to_homeFragment)
 
         }
     }

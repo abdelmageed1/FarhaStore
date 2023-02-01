@@ -51,6 +51,7 @@
     <string name="email">"الاميل : "</string>
     <string name="product_name">"اسم المنتجات : "</string>
     <string name="product_count">"عدد المنتجات : "</string>
+    <string name="search">ابحث</string>
 
 
 </resources>

@@ -83,7 +83,7 @@ class AuthRepo(var application: Application) {
 
 
     fun sendUserData(user: User) {
-
+          user.userId = auth.currentUser!!.uid
         var refUser = database.getReference("Users")
         refUser.child(auth.currentUser!!.uid).child("UserInfo").setValue(user)
     }

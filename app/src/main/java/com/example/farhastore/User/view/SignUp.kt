@@ -2,6 +2,7 @@ package com.example.farhastore.User.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build.VERSION_CODES.R
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -81,22 +82,19 @@ class SignUp : AppCompatActivity() {
         var email = binding.etSignupMail.text.toString().trimStart().trimEnd()
         var password = binding.etSignupPassword.text.toString().trimStart().trimEnd()
         var phone = binding.etSignupPhone.text.toString().trimStart().trimEnd()
+        var address = binding.etUpdateAddress.text.toString().trimStart().trimEnd()
         var gender = getGender()
 
-        if (email.isNotEmpty() && password.isNotEmpty() && fName.isNotEmpty() && lName.isNotEmpty() && gender != null) {
+        if (email.isNotEmpty() && password.isNotEmpty() && fName.isNotEmpty() && lName.isNotEmpty()  && address.isNotEmpty() && gender != null) {
             if (phone.length == 11) {
-                user = User(fName, lName, email, password, phone, gender, "", "")
+                user = User("",fName, lName, email, password, phone, gender, address= address, "")
 
                 authViewModel.createNewUser(email, password)
             } else {
                 binding.etSignupPhone.error = "Enter valid phone number"
                 showBtnSignUp()
                 hideProgress()
-//                Toast.makeText(
-//                    applicationContext,
-//                    "${resources.getString(R.string.invalid_phone_number)}",
-//                    Toast.LENGTH_SHORT
-//                ).show()
+
             }
 
 

@@ -35,6 +35,7 @@
     <string name="laser">Laser</string>
     <string name="resin">Resin</string>
     <string name="skins">Skins</string>
+    <string name="search">Search</string>
     <string name="order_will_be_confirmed">order will be confirmed</string>
     <string name="select_image" tools:ignore="MissingTranslation"> <u>select image</u></string>
 
@@ -67,5 +68,11 @@
     <string name="email">Email :</string>
     <string name="product_name"> Product Name : </string>
     <string name="product_count">Product Count :</string>
+    <string name="group_page_facebook" translatable="false">" <u>اضغط للذهاب الى  بيدج الفيس بوك </u>"</string>
+    <string name="group_whatsapp" translatable="false">" <u>اضغط للذهاب الى جروب الواتساب </u>"</string>
+    <string name="group_facebook" translatable="false">" <u>اضغط للذهاب الى جروب الفيس </u>"</string>
+    <string name="group_telegram" translatable="false">" <u>اضغط للذهاب الى جروب تليجرام</u>"</string>
+    <string name="group_private" translatable="false">" <u>اضغط للتواصل  خاص </u>"</string>
+    <string name="download_new_version" translatable="false">" <u>اضغط تنزيل اخر نسخه </u>"</string>
 
 </resources>
