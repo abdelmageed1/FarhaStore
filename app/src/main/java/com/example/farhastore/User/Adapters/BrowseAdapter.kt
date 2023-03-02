@@ -83,6 +83,7 @@ class BrowseAdapter(var whoCall: String) : RecyclerView.Adapter<BrowseAdapter.Pr
 
     @JvmName("setList1")
     fun setList(list: MutableList<Products>) {
+        list.shuffle()
         this.list = list
         notifyDataSetChanged()
     }

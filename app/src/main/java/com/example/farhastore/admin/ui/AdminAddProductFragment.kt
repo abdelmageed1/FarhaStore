@@ -21,6 +21,7 @@ import com.example.farhastore.R
 import com.example.farhastore.User.Util.constant
 import com.example.farhastore.User.ViewModel.ProfileViewModel
 import com.example.farhastore.User.model.Products
+import com.example.farhastore.User.view.HomeActivity
 import com.example.farhastore.User.view.Login
 import com.example.farhastore.admin.viewModel.AdminViewModel
 import com.example.farhastore.admin.viewModel.VMAddOfferItem
@@ -335,6 +336,9 @@ class AdminAddProductFragment : Fragment() {
                         ProfileViewModel().signOut()
                         startActivity(Intent(context, Login::class.java))
                         activity?.finish()
+                    }
+                    R.id.userMode->{
+                        startActivity(Intent(context,HomeActivity::class.java))
                     }
                 }
                 true

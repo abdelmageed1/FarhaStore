@@ -48,10 +48,9 @@
         <item>Resin</item>
         <item>Skins</item>
         <item>Offer</item>
+        <item>Message Welcome</item>
     </string-array>
-    <string name="title_activity_support" tools:ignore="MissingTranslation">SupportActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label" tools:ignore="MissingTranslation">First Fragment</string>
     <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next" translatable="false">Next</string>
     <string name="previous" translatable="false">Previous</string>
@@ -74,5 +73,6 @@
     <string name="group_telegram" translatable="false">" <u>اضغط للذهاب الى جروب تليجرام</u>"</string>
     <string name="group_private" translatable="false">" <u>اضغط للتواصل  خاص </u>"</string>
     <string name="download_new_version" translatable="false">" <u>اضغط تنزيل اخر نسخه </u>"</string>
+    <string name="name">Name: </string>
 
 </resources>

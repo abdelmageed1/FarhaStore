@@ -30,8 +30,6 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
     override fun onBindViewHolder(holder: OrderVH, position: Int) {
         var current = listOrder[position]
 
-
-
          holder.dateOrder.text = current.date
          holder.timeOrder.text = current.time
          holder.countProduct.text = current.products.size.toString()
@@ -41,7 +39,7 @@ class OrderAdapter : RecyclerView.Adapter<OrderAdapter.OrderVH>() {
              {   productInfo.append(i.nameProduct).append(" ").append(i.priceProduct).append("\n")
                  price += i.priceProduct
              }
-        holder.totalPriceProduct.text ="${price}"
+        holder.totalPriceProduct.text ="$price"
         holder.productItem.text = productInfo
 
 

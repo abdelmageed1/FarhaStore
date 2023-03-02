@@ -132,6 +132,10 @@ class RepoUpdateItem {
             }
     }
 
+    fun updateMessageWelcome(message:String){
+        Firebase.database.reference.child("welcomeMessage").setValue(message)
+    }
+
 
 
 

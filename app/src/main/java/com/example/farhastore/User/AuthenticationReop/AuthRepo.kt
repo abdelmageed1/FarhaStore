@@ -90,7 +90,7 @@ class AuthRepo(var application: Application) {
 
 
 
-fun getCurrentUser()= Firebase.auth.currentUser
+   fun getCurrentUser() = Firebase.auth.currentUser
 
 
 

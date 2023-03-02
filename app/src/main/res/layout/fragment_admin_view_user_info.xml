@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Name :  "
+        android:text="@string/name"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,10 +38,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
 
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="@+id/textView3"
         tools:text="Abdelmageed" />
@@ -51,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Email :  "
+        android:text="@string/email"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textView3"
@@ -61,19 +63,23 @@
         android:id="@+id/tvEmailViewUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="asaaasa"
+        android:layout_marginEnd="5dp"
 
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvemail"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toEndOf="@+id/tvemail"
-        app:layout_constraintTop_toTopOf="@+id/tvemail" />
+
+        app:layout_constraintTop_toTopOf="@+id/tvemail"
+        tools:text="asaaasa" />
 
     <TextView
         android:id="@+id/tvMobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mobile : "
+        android:text="@string/phone"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:layout_marginTop="15dp"
@@ -84,19 +90,21 @@
         android:id="@+id/tvMobileViewUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="1234567890"
+        android:layout_marginEnd="5dp"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvMobile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toEndOf="@+id/tvMobile"
-        app:layout_constraintTop_toTopOf="@+id/tvMobile" />
+        app:layout_constraintTop_toTopOf="@+id/tvMobile"
+        tools:text="1234567890" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Address :  "
+        android:text="@string/address"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tvMobile"
@@ -106,8 +114,11 @@
         android:id="@+id/tvAddressViewUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/textView4"
         tools:text="Mansoura  " />
@@ -117,7 +128,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Gender :  "
+        android:text="@string/gender"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textView4"
@@ -127,12 +138,11 @@
         android:id="@+id/tvGenderViewUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text=" male  "
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        tools:text=" male  " />
 
 
     <Button

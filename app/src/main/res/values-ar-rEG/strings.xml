@@ -4,7 +4,7 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="presed">اضغط مرتين للخروج</string>
-    <string name="login_hint_email">"ادخل الاميل "</string>
+    <string name="login_hint_email">" الاميل "</string>
     <string name="text_login">تسجيل الدخول...</string>
     <string name="login_hint_pass"> كلمة السر</string>
     <string name="btn_login">تسجيل الدخول</string>
@@ -52,6 +52,7 @@
     <string name="product_name">"اسم المنتجات : "</string>
     <string name="product_count">"عدد المنتجات : "</string>
     <string name="search">ابحث</string>
+    <string name="name">"الاسم : "</string>
 
 
 </resources>

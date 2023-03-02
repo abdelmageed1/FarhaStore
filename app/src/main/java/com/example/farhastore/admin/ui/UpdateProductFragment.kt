@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +14,7 @@ import com.example.farhastore.User.Util.constant
 import com.example.farhastore.User.ViewModel.HomeViewModel
 import com.example.farhastore.User.ViewModel.ProductViewModel
 import com.example.farhastore.User.model.Products
+import com.example.farhastore.admin.Repo.RepoUpdateItem
 import com.example.farhastore.databinding.FragmentAdminUpdateProductBinding
 
 
@@ -61,7 +63,7 @@ class UpdateProductFragment : Fragment() {
                 ) {
                     when (position) {
                         0 -> {
-
+                            hideMessageAppearRecycle()
                             productViewModel.getHandmadeProducts()
                             productViewModel.mutableHandmadeProduct().observe(viewLifecycleOwner) {
                                 if (it != null) {
@@ -72,7 +74,7 @@ class UpdateProductFragment : Fragment() {
                             }
                         }
                         1 -> {
-
+                            hideMessageAppearRecycle()
                             productViewModel.getAccessoriesProducts()
                             productViewModel.mutableAccessoriesProduct()
                                 .observe(viewLifecycleOwner) {
@@ -83,6 +85,7 @@ class UpdateProductFragment : Fragment() {
                         }
 
                         2 -> {
+                            hideMessageAppearRecycle()
                             productViewModel.getLaserProducts()
                             productViewModel.mutableLaserProduct().observe(viewLifecycleOwner) {
                                 if (it != null) {
@@ -92,6 +95,7 @@ class UpdateProductFragment : Fragment() {
                         }
 
                         3 -> {
+                            hideMessageAppearRecycle()
                             productViewModel.getPrintProducts()
                             productViewModel.mutablePrintProduct().observe(viewLifecycleOwner) {
                                 if (it != null) {
@@ -101,7 +105,7 @@ class UpdateProductFragment : Fragment() {
                         }
 
                         4 -> {
-
+                            hideMessageAppearRecycle()
                             productViewModel.getResinProducts()
                             productViewModel.mutableResinProduct().observe(viewLifecycleOwner) {
                                 if (it != null) {
@@ -111,6 +115,7 @@ class UpdateProductFragment : Fragment() {
                         }
 
                         5 -> {
+                            hideMessageAppearRecycle()
                             productViewModel.getSkinsProducts()
                             productViewModel.mutableSkinsProduct().observe(viewLifecycleOwner) {
                                 if (it != null) {
@@ -121,6 +126,7 @@ class UpdateProductFragment : Fragment() {
 
 
                         6 -> {
+                            hideMessageAppearRecycle()
                             homeViewModel.getOffers()
                             homeViewModel.mutableOffers().observe(viewLifecycleOwner) {
                                 if (it != null) {
@@ -129,6 +135,10 @@ class UpdateProductFragment : Fragment() {
                             }
 
                         }
+                        // Message Welcome
+                      7-> {
+                          hideRecycleAppearMessage()
+                      }
 
                     }
 
@@ -138,6 +148,14 @@ class UpdateProductFragment : Fragment() {
 
                 }
             }
+
+
+        binding.btnMessage.setOnClickListener {
+
+            RepoUpdateItem().updateMessageWelcome(binding.etMessage.text.toString())
+            Toast.makeText(context, "${binding.etMessage.text.toString()}", Toast.LENGTH_SHORT).show()
+
+        }
 
 
     }
@@ -150,6 +168,26 @@ class UpdateProductFragment : Fragment() {
         binding.recycleViewUpdateProduct.layoutManager = LinearLayoutManager(context)
         binding.recycleViewUpdateProduct.adapter = adapterCategory
         adapterCategory.setList(it)
+
+    }
+
+
+    fun hideMessageAppearRecycle()
+    {
+        binding.recycleViewUpdateProduct.visibility = View.VISIBLE
+
+        binding.btnMessage.visibility = View.GONE
+        binding.layoutMessage.visibility = View.GONE
+
+
+    }
+    fun hideRecycleAppearMessage()
+    {
+        binding.recycleViewUpdateProduct.visibility = View.GONE
+
+        binding.btnMessage.visibility = View.VISIBLE
+        binding.layoutMessage.visibility = View.VISIBLE
+
 
     }
 

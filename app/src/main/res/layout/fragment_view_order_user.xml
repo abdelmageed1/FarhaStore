@@ -34,45 +34,39 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_UName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:maxLines="5"
         android:text="--"
         android:textColor="#F8000000"
         android:textSize="13sp"
         android:textStyle="bold"
-        android:maxLines="5"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/im_profile"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/uAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:maxLines="5"
         android:textColor="#F8000000"
         android:textSize="13sp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/im_profile"
         app:layout_constraintTop_toBottomOf="@+id/tv_UName" />
 
     <TextView
-        android:textColor="#F8000000"
-        android:textSize="13sp"
         android:id="@+id/uNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#F8000000"
+        android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/im_profile"
         app:layout_constraintTop_toBottomOf="@+id/uAddress" />
 

@@ -26,9 +26,11 @@ object constant {
     const val ShowCategoryItems: String = "ShowCategoryItems"
 
 
-    const val Email_Admin: String = "omfarha2011@gmail.com"
-    const val Pass_Admin: String = "omfarha2011"
-    const val AdminSecureVerfiy: String = "z"
+    const val Email_Admin: String = "hagarfarha88@gmail.com"
+    const val Pass_Admin: String = "farha2011"
+    const val AdminSecureVerfiy: String = "H"
+
+
 
 
     var refHandMadeProduct = Firebase.database.reference.child("Products")

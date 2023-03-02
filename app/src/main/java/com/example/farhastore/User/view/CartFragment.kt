@@ -95,14 +95,14 @@ class CartFragment : Fragment() {
 
     }
 
-    fun getCurrentDate(): String {
+    private fun getCurrentDate(): String {
         val calendar = Calendar.getInstance()
         val simpleDateFormat =
             SimpleDateFormat("MMM dd, yyyy")
         return simpleDateFormat.format(calendar.time)
     }
 
-    fun getCurrentTime(): String {
+    private fun getCurrentTime(): String {
         val calendar = Calendar.getInstance()
         val simpleDateFormat = SimpleDateFormat("HH:mm:ss ")
         return simpleDateFormat.format(calendar.time)

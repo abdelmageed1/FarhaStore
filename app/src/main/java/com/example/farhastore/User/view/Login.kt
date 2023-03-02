@@ -57,8 +57,8 @@ class Login : AppCompatActivity() {
         authViewModel.getSuccessLoginMutable().observe(this) {
             if (it != null)
                 Toast.makeText(applicationContext, "login success", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(applicationContext, HomeActivity::class.java))
-            finish()
+                startActivity(Intent(applicationContext, HomeActivity::class.java))
+                finish()
         }
 
     }
@@ -128,7 +128,7 @@ class Login : AppCompatActivity() {
         binding.btnOkAdmin.setOnClickListener {
             var verify = binding.etVerfiyAdmin.text.toString()
             if (verify == constant.AdminSecureVerfiy) {
-                authViewModel.loginAdmin(email, pass)
+                authViewModel.loginAdmin(email,pass)
             }
         }
 

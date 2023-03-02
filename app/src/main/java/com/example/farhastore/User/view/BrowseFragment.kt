@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -66,14 +65,8 @@ class BrowseFragment : Fragment() {
         arrAllProduct.clear()
 
 
-
-        arrAllProduct.clear()
-
-
-
         productViewModel.mutableHandmadeProduct().observe(viewLifecycleOwner) {
             if (it != null) {
-
                 arrAllProduct.addAll(it)
             }
         }
@@ -112,45 +105,19 @@ class BrowseFragment : Fragment() {
 
         }
 
+        arrAllProduct.shuffle()
+
 
         setRecycle(arrAllProduct)
 
-        binding.searchView.addTextChangedListener {text->
-            if(text!!.isNotEmpty())
-            setRecycle(arrAllProduct.filter{it.nameProduct.contains(text.toString())} as MutableList<Products>)
+        binding.searchView.addTextChangedListener { text ->
+                setRecycle(arrAllProduct.filter { it.nameProduct.contains(text.toString()) } as MutableList<Products>)
 
         }
 
 
-
-
     }
 
-
-//
-//   suspend fun setDaTaHand(): MutableList<Products> {
-//       productViewModel.getHandmadeProducts()
-//        var i = mutableListOf<Products>()
-//        productViewModel.mutableHandmadeProduct().observe(viewLifecycleOwner) {
-//            if (it != null) {
-//                 i = it
-//            }
-//        }
-//        return i
-//    }
-//
-//   suspend fun setDaTaLiser(): MutableList<Products> {
-//       productViewModel.getLaserProducts()
-//       var i = mutableListOf<Products>()
-//        productViewModel.mutableLaserProduct().observe(viewLifecycleOwner) {
-//            if (it != null) {
-//                i = it
-//
-//            } }
-//        return i
-//    }
-//
-//
 
 
     private fun setRecycle(it: MutableList<Products>) {
@@ -158,6 +125,7 @@ class BrowseFragment : Fragment() {
             BrowseAdapter(constant.Browse)
         binding.recycleBrowseProduct.layoutManager = LinearLayoutManager(context)
         binding.recycleBrowseProduct.adapter = adapterProduct
+        it.shuffle()
         adapterProduct.setList(it)
 
     }

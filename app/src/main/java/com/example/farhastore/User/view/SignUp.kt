@@ -2,7 +2,6 @@ package com.example.farhastore.User.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Build.VERSION_CODES.R
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
